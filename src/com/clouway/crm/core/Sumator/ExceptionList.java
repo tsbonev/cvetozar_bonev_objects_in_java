@@ -12,29 +12,29 @@ public class ExceptionList {
         this.attributes = new ArrayList<Object>(SIZE);
     }
 
-    public void Add(Object obj){
+    public boolean add(Object obj){
         try{
             if(attributes.size() + 1 > SIZE){
                 throw new IndexOutOfBoundsException();
             }
             attributes.add(obj);
-            System.out.println("Successfully added " + obj);
+            return true;
         }
         catch (IndexOutOfBoundsException e){
-            System.out.println("Caught exception: " + e);
+            throw new IndexOutOfBoundsException();
         }
     }
 
-    public void Remove(){
+    public boolean remove(){
         try{
             if(attributes.size() == 0){
                 throw new EmptyStackException();
             }
-            System.out.println("Successfully removed " + attributes.get(attributes.size() - 1));
             attributes.remove(attributes.get(attributes.size() - 1));
+            return true;
         }
         catch (EmptyStackException e){
-            System.out.println("Caught exception: " + e);
+            throw new EmptyStackException();
         }
     }
 

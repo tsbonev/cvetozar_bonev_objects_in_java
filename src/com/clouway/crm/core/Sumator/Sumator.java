@@ -27,14 +27,7 @@ public class Sumator {
             return res;
         }
         catch (NumberFormatException e){
-            System.out.println("Caught exception: " + e);
-        }
-        finally {
-
-            if(success){
-                return res;
-            }
-            return "Summation failed";
+            return "Caught exception: " + e;
         }
 
     }

@@ -121,10 +121,10 @@ public class HeterogeneousTree {
      */
     public void printElements(String order){
 
-        if(order == "pre-order"){
+        if(order.equals("pre-order")){
             preOrder(parentNode);
         }
-        else if(order == "in-order"){
+        else if(order.equals("in-order")){
             //ArrayList<Integer> result = new ArrayList<>();
             inOrder(parentNode);
             //int[] sortedResult = result.stream().mapToInt(c -> c).toArray();
@@ -133,7 +133,7 @@ public class HeterogeneousTree {
             //    System.out.println(element);
             //}
         }
-        else if(order == "post-order"){
+        else if(order.equals("post-order")){
 
             postOrder(parentNode);
 
