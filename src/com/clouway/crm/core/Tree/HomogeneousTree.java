@@ -24,7 +24,6 @@ public class HomogeneousTree {
     private HomTreeElement parentNode;
     private HomTreeElement head;
     private boolean headFull = false;
-    private int treeSize = 1;
 
     /**
      * Constructs a HomogenousTree class
@@ -76,7 +75,6 @@ public class HomogeneousTree {
                 head.branches[0] = branch;
                 headFull = false;
             }
-            treeSize++;
         }
     }
 

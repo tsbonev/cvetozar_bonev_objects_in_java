@@ -13,8 +13,30 @@ public class Sumator {
         return a + b;
     }
 
-    public String sum(String a, String b){
-        return a + b;
+    public String sum(String a, String b)
+            throws NumberFormatException {
+
+        boolean success = false;
+        String res = "";
+
+        try {
+            int A = Integer.parseInt(a);
+            int B = Integer.parseInt(b);
+            res = Integer.toString(A + B);
+            success = true;
+            return res;
+        }
+        catch (NumberFormatException e){
+            System.out.println("Caught exception: " + e);
+        }
+        finally {
+
+            if(success){
+                return res;
+            }
+            return "Summation failed";
+        }
+
     }
 
     /**

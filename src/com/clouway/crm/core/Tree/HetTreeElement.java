@@ -2,27 +2,25 @@ package com.clouway.crm.core.Tree;
 
 public class HetTreeElement<T> {
 
-    static int elemCount = 0;
-
     T node;
     HetTreeElement left;
     HetTreeElement right;
     int index;
     boolean isFull = false;
 
-    public HetTreeElement(T object){
+    public HetTreeElement(T object, int elemCount){
         this.node = object;
         this.index = elemCount;
         elemCount++;
     }
 
-    public boolean addElem (Object object){
+    public boolean addElem (Object object, int elemCount){
         if(left == null){
-            this.left = new HetTreeElement(object);
+            this.left = new HetTreeElement(object, elemCount);
             return false;
         }
         else if(right == null){
-            this.right = new HetTreeElement(object);
+            this.right = new HetTreeElement(object, elemCount);
             this.isFull = true;
             return true;
         }

@@ -5,13 +5,13 @@ public class HeterogeneousTree {
     private HetTreeElement parentNode;
     private HetTreeElement head;
     private boolean headFull = false;
-    private int treeSize = 1;
+    private int elemCount;
 
     /**
      * Constructs a HeterogenousTree class
      */
     public HeterogeneousTree(){
-        this.parentNode = new HetTreeElement(null);
+        this.parentNode = new HetTreeElement(null, ++elemCount);
         head = parentNode;
     }
 
@@ -33,7 +33,7 @@ public class HeterogeneousTree {
             return node.right;
         }
 
-        HetTreeElement tempBranch = new HetTreeElement(-1);
+        HetTreeElement tempBranch = new HetTreeElement(-1, ++elemCount);
         return tempBranch; //this never executes;
 
     }
@@ -51,14 +51,13 @@ public class HeterogeneousTree {
         }
 
         if(!headFull){
-            headFull = head.addElem(object); //add to head
+            headFull = head.addElem(object, ++elemCount); //add to head
         }
         else {
             head = findHead(parentNode);
-            head.addElem(object);
+            head.addElem(object, ++elemCount);
             headFull = false;
         }
-        treeSize++;
     }
 
     /**
